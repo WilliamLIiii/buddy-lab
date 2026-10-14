@@ -1,0 +1,28 @@
+name: Desktop runtime and packages
+on:
+  workflow_dispatch:
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      # Existing command fixtures use POSIX shell syntax. This job exercises
+      # platform-neutral workflows plus the Windows-specific child-tree case.
+      - run: node --test test/desktop.test.mjs test/windows-desktop.test.mjs test/credential-storage.test.mjs test/automations.test.mjs test/browser.test.mjs test/workflows.test.mjs
+      - run: npm run desktop:build -- --target=win-x64
+      - run: node scripts/desktop-smoke.mjs --executable=output/desktop/win-x64/win-unpacked/BuddyLab.exe
+      - run: npm run desktop:verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BuddyLab-windows-x64
+          path: |
+            output/desktop/win-x64/*.exe
+            output/desktop/*smoke.json
+            output/desktop/build-verification.json
+          retention-days: 14

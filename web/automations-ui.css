@@ -1,0 +1,83 @@
+.wb-automations{max-width:1400px;margin:0 auto;color:var(--ink,#263441)}
+.wb-automations-header{display:flex;align-items:center;justify-content:space-between;margin:0 0 24px;gap:16px}
+.wb-automations-header h1{font-size:18px;font-weight:600;margin:0}
+.wb-automations-header .button{padding:8px 16px;border-radius:9px}
+.wb-automations-empty{min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#a9b4bd;gap:14px}
+.wb-automations-empty svg{width:64px;height:64px;stroke-width:2;color:#c4cdd4}
+.wb-automations-empty p{margin:0;font-size:14px}
+.wb-automation-suggestions{margin-top:28px}
+.wb-automation-suggestions h2{font-size:15px;font-weight:500;margin:0 0 24px}
+.wb-automation-grid,.wb-automation-template-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.wb-automation-template{min-width:0;display:flex;align-items:flex-start;gap:16px;text-align:left;height:82px;border:1px solid #edf0f2;background:var(--surface,#fff);border-radius:18px;padding:18px 22px;color:inherit;box-shadow:0 2px 9px #2c445306;cursor:pointer;font:inherit}
+.wb-automation-template:hover{border-color:#b9dff9;background:#f8fcff}
+.wb-automation-template:focus-visible{outline:2px solid #65b9f0;outline-offset:2px}
+.wb-automation-template>svg{width:23px;height:23px;flex:none}
+.wb-automation-template>span{display:flex;flex-direction:column;gap:8px;min-width:0}
+.wb-automation-template strong{font-size:14px;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.wb-automation-template span span{font-size:13px;color:#65747f;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.wb-automation-card{height:154px;padding:14px 16px;border:1px solid #e8edf1;background:var(--surface,#fff);border-radius:14px;box-sizing:border-box;position:relative;min-width:0}
+.wb-automation-card-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wb-automation-title{display:flex;align-items:center;gap:9px;border:0;padding:0;min-width:0;background:transparent;color:inherit;cursor:pointer;text-align:left}
+.wb-automation-title svg{width:20px;height:20px;flex:none}
+.wb-automation-title strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14px;font-weight:600}
+.wb-automation-prompt{font-size:12px;color:#74808a;line-height:18px;margin:9px 0;height:36px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.wb-automation-schedule{display:flex;align-items:center;gap:5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:11px;color:#637585}
+.wb-automation-schedule svg{width:13px;height:13px;flex:none}
+.wb-automation-card footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:10px;color:#89939b;white-space:nowrap}
+.wb-automation-card footer>span:last-child{overflow:hidden;text-overflow:ellipsis}
+.wb-automation-state{flex:none;color:#8c969e}
+.wb-automation-state.active{color:#369976}
+.wb-automation-next{font-size:10px;color:#89939b;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wb-automation-menu{position:relative;flex:none}
+.wb-automation-menu>summary{list-style:none;cursor:pointer;font-size:20px;line-height:20px;width:24px;text-align:center;color:#89939b}
+.wb-automation-menu>summary::-webkit-details-marker{display:none}
+.wb-automation-menu>div{position:absolute;z-index:12;right:0;top:27px;background:#fff;border:1px solid #e3e9ed;border-radius:10px;padding:5px;box-shadow:0 6px 24px #263b4922;min-width:126px;display:flex;flex-direction:column}
+.wb-automation-menu .button{border:0;box-shadow:none;background:transparent;text-align:left;font-size:12px;padding:8px 10px;width:100%;border-radius:6px;white-space:nowrap}
+.wb-automation-menu .button:hover{background:#f0f7fc}
+.wb-automation-menu [data-delete-automation]{color:#b85151}
+.wb-automation-local-note{font-size:11px;color:#99a3ab;margin:24px 0 0}
+#automation-dialog.wb-automation-dialog{width:800px;max-width:calc(100vw - 32px);padding:24px;border:0;border-radius:24px;box-shadow:0 18px 80px #233d4f33;color:#30414e}
+#automation-dialog.wb-automation-dialog::backdrop{background:#1b354772;backdrop-filter:blur(4px)}
+#automation-dialog.wb-automation-dialog form{display:flex;flex-direction:column;gap:16px}
+#automation-dialog.wb-automation-dialog .dialog-header{margin:0 0 2px}
+#automation-dialog.wb-automation-dialog .dialog-header h2{font-size:16px;font-weight:600}
+#automation-dialog.wb-automation-dialog input,#automation-dialog.wb-automation-dialog select,#automation-dialog.wb-automation-dialog textarea{font:inherit;box-sizing:border-box;min-width:0}
+#automation-dialog .wb-automation-name{width:100%;height:40px;border:1px solid #bbc4ca;border-radius:8px;padding:0 16px;font-size:14px}
+#automation-dialog .wb-automation-composer{background:#e6f4fd;border-radius:24px;padding:2px}
+#automation-dialog .wb-automation-prompt-box{background:#fff;border-radius:23px;padding:16px 16px 10px}
+#automation-dialog .wb-automation-prompt-box textarea{width:100%;height:128px;min-height:100px;resize:vertical;display:block;border:0;border-radius:0;outline:none;padding:0;font-size:14px;line-height:22px;background:transparent;box-shadow:none}
+#automation-dialog .wb-automation-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px}
+#automation-dialog .wb-automation-toolbar>div{display:flex;align-items:center;gap:8px;min-width:0}
+#automation-dialog .wb-automation-toolbar .icon-button{font-size:22px;width:26px;height:26px;padding:0;color:#4e5b65}
+#automation-dialog .wb-automation-toolbar select,#automation-dialog .wb-automation-toolbar input{border:0;background:transparent;box-shadow:none;font-size:12px;padding:2px;height:28px;max-width:180px;width:auto}
+#automation-dialog .wb-automation-workspace{display:flex;align-items:center;gap:18px;padding:10px 18px;font-size:12px;color:#6d828f}
+#automation-dialog .wb-automation-workspace label{display:flex;align-items:center;gap:6px;margin:0;font-size:12px;min-width:0}
+#automation-dialog .wb-automation-workspace svg{width:17px;height:17px;flex:none}
+#automation-dialog .wb-automation-workspace select{border:0;background:transparent;height:25px;box-shadow:none;padding:0;max-width:240px;font-size:12px;color:#6d828f}
+#automation-dialog .wb-automation-permission{white-space:nowrap;color:#6d828f;display:flex;align-items:center;gap:6px}
+#automation-dialog .wb-automation-permission svg{width:17px;height:17px}
+#automation-dialog .wb-automation-main-settings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#automation-dialog .wb-automation-setting{border:1px solid #e6eaed;border-radius:9px;padding:8px 12px;display:flex;align-items:center;gap:8px;min-height:38px;box-sizing:border-box;font-size:13px;min-width:0}
+#automation-dialog .wb-automation-setting label{display:flex;align-items:center;gap:7px;margin:0;min-width:0;width:100%;white-space:nowrap;font-size:13px}
+#automation-dialog .wb-automation-setting input,#automation-dialog .wb-automation-setting select{border:0;background:transparent;box-shadow:none;height:25px;padding:0;max-width:100%;flex:1;font-size:13px;width:auto}
+#automation-dialog .wb-automation-setting [type=datetime-local]{font-size:11px}
+#automation-dialog .wb-automation-extra-calendar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#automation-dialog .wb-automation-extra-calendar:has(> :not([hidden])){margin-top:-4px}
+#automation-dialog #automation-weekday-label{grid-column:1/-1;padding:8px;border:1px solid #e9edf0;border-radius:8px;font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
+#automation-dialog #automation-weekday-label label{display:flex;align-items:center;gap:4px;font-size:12px;margin:0}
+#automation-dialog #automation-weekday-label input{width:13px;height:13px}
+#automation-dialog .wb-automation-extra-calendar label{font-size:12px;margin:0;display:flex;flex-direction:column;gap:5px}
+#automation-dialog .wb-automation-extra-calendar small{font-size:10px;color:#95a0a8}
+#automation-dialog #automation-more-settings{font-size:12px;color:#76858f}
+#automation-dialog #automation-more-settings summary{cursor:pointer;list-style:none}
+#automation-dialog #automation-more-settings summary::after{content:'⌄';margin-left:8px}
+#automation-dialog #automation-more-settings>div{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:12px}
+#automation-dialog #automation-more-settings label{font-size:12px;margin:0;display:flex;flex-direction:column;gap:5px}
+#automation-dialog #automation-more-settings [name=skills]{min-height:66px}
+#automation-dialog .wb-automation-help{font-size:10px;line-height:16px;color:#98a3ab;margin:0}
+#automation-dialog .dialog-footer{display:flex;justify-content:flex-end;gap:12px;margin:0}
+#automation-dialog .dialog-footer .button{padding:7px 19px;border-radius:9px;font-size:13px;min-width:68px}
+#automation-dialog [hidden]{display:none!important}
+.message-actions .message-model-meta{margin-left:auto;color:#94a0a9;font-size:11px;line-height:24px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px}
+@media(max-width:980px){.wb-automation-grid,.wb-automation-template-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.wb-automation-grid,.wb-automation-template-grid{grid-template-columns:1fr}#automation-dialog.wb-automation-dialog{padding:18px}#automation-dialog .wb-automation-main-settings{grid-template-columns:1fr}#automation-dialog .wb-automation-extra-calendar{grid-template-columns:1fr}#automation-dialog .wb-automation-workspace{flex-wrap:wrap;gap:6px}#automation-dialog .wb-automation-toolbar>div{flex-wrap:wrap}.wb-automations-empty{min-height:220px}.message-actions .message-model-meta{max-width:120px}}

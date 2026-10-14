@@ -1,0 +1,29 @@
+<!-- Replace the existing #automation-dialog; names and IDs preserve the real root submit contract. -->
+<dialog id="automation-dialog" class="wb-automation-dialog">
+  <form id="automation-form">
+    <div class="dialog-header"><h2 id="automation-dialog-title">新建定时任务</h2><button type="button" class="icon-button" data-close="automation-dialog" aria-label="关闭"><span data-icon="close"></span></button></div>
+    <input class="wb-automation-name" name="name" aria-label="任务名称" placeholder="输入任务名称" required maxlength="120">
+    <div class="wb-automation-composer">
+      <div class="wb-automation-prompt-box">
+        <textarea name="prompt" aria-label="任务提示词" placeholder="添加提示词" rows="6" required maxlength="20000"></textarea>
+        <div class="wb-automation-toolbar"><button type="button" class="icon-button" data-automation-more aria-label="选择技能与专家" title="选择技能与专家">+</button><div><select name="mode" aria-label="执行模式"><option value="ASK">Ask · 只读汇总</option><option value="AGENT">Agent · 执行与生成</option></select><input name="model" aria-label="模型" list="model-options" placeholder="跟随当前模型"></div></div>
+      </div>
+      <div class="wb-automation-workspace"><label><span data-icon="folder"></span><select name="workspaceId" aria-label="工作区" required></select></label><span class="wb-automation-permission" title="写入文件、运行命令与外部操作仍逐次等待审批"><span data-icon="shield"></span>逐次确认</span></div>
+    </div>
+    <div class="wb-automation-main-settings">
+      <div class="wb-automation-setting"><label>重复：<select name="scheduleType"><option value="once">单次</option><option value="interval">间隔</option><option value="daily" selected>每天</option><option value="weekly">每周</option><option value="biweekly">每双周</option><option value="monthly">每月</option><option value="yearly">每年</option></select></label></div>
+      <div class="wb-automation-setting"><label id="automation-time-label">时间：<input name="time" aria-label="北京时间" type="time" value="09:00"></label><label id="automation-interval-label" hidden>间隔：<input name="intervalMinutes" aria-label="间隔分钟" type="number" min="1" max="525600" value="60"><span>分钟</span></label><label id="automation-once-label" hidden><input name="at" aria-label="单次执行日期时间 · 北京时间" type="datetime-local"></label></div>
+      <div class="wb-automation-setting"><label>有效期：<select name="expiryMode"><option value="forever">长期有效</option><option value="until">截至指定日期</option></select></label></div>
+    </div>
+    <div class="wb-automation-extra-calendar">
+      <fieldset id="automation-weekday-label" hidden><legend>执行日</legend><label><input name="weekdays" type="checkbox" value="1" checked>周一</label><label><input name="weekdays" type="checkbox" value="2">周二</label><label><input name="weekdays" type="checkbox" value="3">周三</label><label><input name="weekdays" type="checkbox" value="4">周四</label><label><input name="weekdays" type="checkbox" value="5">周五</label><label><input name="weekdays" type="checkbox" value="6">周六</label><label><input name="weekdays" type="checkbox" value="7">周日</label></fieldset>
+      <label id="automation-anchor-label" hidden>双周基准日期<input name="anchorDate" type="date"><small>包含此日的周执行，下一周跳过。</small></label>
+      <label id="automation-month-label" hidden>月份<input name="month" type="number" min="1" max="12" value="1"></label>
+      <label id="automation-day-label" hidden>日期<input name="day" type="number" min="1" max="31" value="1"><small>当月没有此日期时跳过。</small></label>
+      <label id="automation-end-date-label" hidden>结束日期<input name="endDate" type="date"><small>包含结束当天。</small></label>
+    </div>
+    <details id="automation-more-settings"><summary>更多设置</summary><div><label>专家<select name="expertId"></select></label><label>生效日期<input name="startDate" type="date"></label><label>技能<select name="skills" multiple size="3"></select></label></div></details>
+    <p class="wb-automation-help">北京时间。工作台保持运行时调度，结果保存在任务历史。退出客户端后停止调度；写入与外部操作仍需确认。</p>
+    <div class="dialog-footer"><button type="button" class="button secondary" data-close="automation-dialog">取消</button><button class="button primary" type="submit">确定</button></div>
+  </form>
+</dialog>

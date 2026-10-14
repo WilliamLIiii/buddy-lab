@@ -1,0 +1,53 @@
+{
+  "name": "buddy-lab",
+  "version": "0.4.4",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node scripts/run-desktop-node.mjs start",
+    "test": "node scripts/run-desktop-node.mjs test",
+    "setup:browser": "playwright install chromium",
+    "desktop:dev": "electron .",
+    "desktop:smoke": "node scripts/desktop-smoke.mjs",
+    "desktop:build": "node scripts/build-desktop.mjs",
+    "desktop:verify": "node scripts/verify-desktop.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@napi-rs/canvas": "0.1.100",
+    "docx": "9.6.1",
+    "dompurify": "3.4.17",
+    "exceljs": "4.4.0",
+    "mammoth": "1.13.0",
+    "marked": "18.1.1",
+    "pdfjs-dist": "6.4.299",
+    "playwright": "1.62.1",
+    "pptxgenjs": "4.0.1",
+    "sharp": "0.35.5",
+    "yaml": "2.9.1",
+    "yauzl": "3.4.0"
+  },
+  "overrides": {
+    "pptxgenjs": {
+      "image-size": "2.0.4"
+    },
+    "exceljs": {
+      "uuid": "11.1.1"
+    }
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3"
+  },
+  "main": "desktop/main.cjs",
+  "productName": "BuddyLab",
+  "description": "仅用于学习与非商业研究的本地AI工作台；支持真实模型、工具、任务和桌面客户端。非官方项目。",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WilliamLIiii/buddy-lab.git"
+  }
+}

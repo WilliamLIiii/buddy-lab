@@ -1,0 +1,37 @@
+import { _electron } from 'playwright';
+import { createRequire } from 'node:module';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
+const root = fileURLToPath(new URL('../', import.meta.url)), require = createRequire(import.meta.url);
+const executable = process.argv.find(item => item.startsWith('--executable='))?.slice('--executable='.length);
+const temporary = await fs.mkdtemp(path.join(os.tmpdir(), 'buddylab-existing-client-')), url = 'http://127.0.0.1:47831/';
+const dataDir = process.argv.find(item => item.startsWith('--data-dir='))?.slice('--data-dir='.length);
+const workspaceRoot = process.argv.find(item => item.startsWith('--workspace-root='))?.slice('--workspace-root='.length);
+if (!dataDir || !workspaceRoot) throw new Error('Explicit existing data and workspace directories are required');
+await fs.access(path.join(dataDir, 'buddylab.sqlite')); await fs.access(workspaceRoot);
+const persistent = process.argv.includes('--save-local-preferences');
+const env = { ...process.env, BUDDYLAB_API_KEY: '', BUDDYLAB_MODEL: '', BUDDYLAB_BASE_URL: '' };
+delete env.ELECTRON_RUN_AS_NODE; delete env.BUDDYLAB_DATA_DIR; delete env.BUDDYLAB_WORKSPACE_ROOT; delete env.BUDDYLAB_DESKTOP_URL;
+if (!persistent) env.BUDDYLAB_DESKTOP_USER_DATA = path.join(temporary, 'user'); else delete env.BUDDYLAB_DESKTOP_USER_DATA;
+const read = () => fetch(new URL('api/bootstrap', url)).then(response => response.json());
+const fingerprint = value => createHash('sha256').update(JSON.stringify({ workspaces: value.workspaces, sessions: value.sessions, config: value.config })).digest('hex');
+const before = await read(); let application;
+try {
+  application = await _electron.launch({ executablePath: executable || require('electron'), args: [...(executable ? [] : [root]), '--data-dir', dataDir, '--workspace-root', workspaceRoot], env, timeout: 45000 });
+  let page = await application.firstWindow(); await page.waitForFunction(() => Boolean(window.buddyDesktop));
+  let runtime = await page.evaluate(() => window.buddyDesktop.runtime());
+  if (runtime.backend.owned || runtime.backend.url !== url || runtime.dataDirectory !== path.resolve(dataDir) || runtime.workspaceDirectory !== path.resolve(workspaceRoot)) throw new Error('Existing service/data preferences not used');
+  const preferenceDirectory = await application.evaluate(({ app }) => app.getPath('userData'));
+  await application.close(); application = null;
+  application = await _electron.launch({ executablePath: executable || require('electron'), args: executable ? [] : [root], env, timeout: 45000 });
+  page = await application.firstWindow(); await page.waitForFunction(() => Boolean(window.buddyDesktop)); runtime = await page.evaluate(() => window.buddyDesktop.runtime());
+  if (runtime.backend.owned || runtime.dataDirectory !== path.resolve(dataDir) || runtime.workspaceDirectory !== path.resolve(workspaceRoot)) throw new Error('Existing directory preferences were not persistent');
+  await application.close(); application = null;
+  const after = await read(); if (fingerprint(before) !== fingerprint(after)) throw new Error('Existing config/history changed during read-only client smoke');
+  const report = { existingServiceReused: true, backendOwned: false, configAndHistoryUnchanged: true, originalServiceStillRunningAfterQuit: true, keyPersistentBefore: Boolean(before.config.keyPersistent), keyPersistentAfter: Boolean(after.config.keyPersistent), preferencesSurvivedRestart: true, preferencesDirectory: preferenceDirectory, localPreferencesSaved: persistent, packaged: Boolean(executable), commercialModelCalls: false };
+  await fs.mkdir(path.join(root, 'output/desktop'), { recursive: true }); await fs.writeFile(path.join(root, 'output/desktop/existing-backend-smoke.json'), JSON.stringify(report, null, 2));
+  console.log(JSON.stringify({ existingBackendSmokePassed: true, packaged: Boolean(executable), localPreferencesSaved: persistent }));
+} finally { await application?.close().catch(() => {}); await fs.rm(temporary, { recursive: true, force: true }); }

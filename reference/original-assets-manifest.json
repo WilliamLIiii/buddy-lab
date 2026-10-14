@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "product": "WorkBuddy",
+    "version": "5.7.6",
+    "copyright": "第三方原作者",
+    "archiveSha256": "915421fd5bfc9b965aa358dbe036eef4ac998205732cd749d2242888fbdac6f7"
+  },
+  "notice": "仅列文件名、校验值与出处，不包含原版资源字节。学习用途声明不授予第三方许可。",
+  "entries": [
+    {
+      "kind": "asset",
+      "path": "design-scenes.json",
+      "sha256": "f3ebd1e84c58f26f2084c17230ceb9c78a30daaeabef19ae2bbac9f869155529",
+      "bytes": 36287,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "mascot.png",
+      "sha256": "b4f819660170b45a13abdd9e9a5b82931c4e4f84bcc624f24698addb7da99614",
+      "bytes": 704896,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "remote-assistant/dingtalk.png",
+      "sha256": "b5e8e8ce6a1d25c332a05253bed79590baa7e37202d604354ae9d11c0a3b9b45",
+      "bytes": 2354,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "remote-assistant/feishu.png",
+      "sha256": "cc7ca939d1fe4cf8e12570f928bffb5385b07a119d284670d5b6e66e09577ac2",
+      "bytes": 1673,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "remote-assistant/qq.png",
+      "sha256": "2e68ba56c7caea5544135cbe6515541f8a9b78d2f5e6e83de679feccc5c45582",
+      "bytes": 7787,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "remote-assistant/wechat-assistant.png",
+      "sha256": "7735b0f1eb88b8150f7c4b938174727e7f4c0cac8f3ae935499f6fecfb7d8ddc",
+      "bytes": 2464,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "remote-assistant/wechat-service.png",
+      "sha256": "1a10d1bb19a38addda80f06961f8bfb985d24a9f8530aa77574263468495b297",
+      "bytes": 1768,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "remote-assistant/wecom.png",
+      "sha256": "fb98fc252ab2dc0df840795ec658d1a21f0583bd671bdaa0df79ba1daebdc47c",
+      "bytes": 2421,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-back-to-school-header.png",
+      "sha256": "97d126aa40494f8f0d1f5434cbe7cc288152891b52a5edc578b81a5661bc96d6",
+      "bytes": 25280,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-content-creation-header.png",
+      "sha256": "fe7c9343b4dcd54d88afe3dd5b1c880afa95bec630a722904fd141240cbfbf14",
+      "bytes": 28704,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-ecommerce-header.png",
+      "sha256": "b0d8b4bc547d66470e02bb2e697837b22992cd1afba5db84e92ef583e1ae6993",
+      "bytes": 25934,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-engineering-header.png",
+      "sha256": "aaf5c1334d4ceef63eb9dd3226ede21a0938b726f1e112490dc027b8d4f3912b",
+      "bytes": 30660,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-investment-header.png",
+      "sha256": "5420f3f70b0ba047022a5b0c88435d66fd5be6339d280c4b64ba8ab75d668ab7",
+      "bytes": 27536,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-product-design-header.png",
+      "sha256": "f92ab99b3f3361139e583f94a1292c24c1291736467ea1588e24d7010dbb16b6",
+      "bytes": 26137,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-professional-docs-header.png",
+      "sha256": "7e80400fd775f424c18548b555e8e0db43c5b34cb0e06b55cf02418e60cd22f0",
+      "bytes": 25155,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-scenes/scene-small-business-header.png",
+      "sha256": "2c1a18bf79ca7928d802dea78cf4f0b8caea65809c2ce774c8ebeb7b718510e6",
+      "bytes": 26148,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "asset",
+      "path": "workbuddy-sky/source-skin.css",
+      "sha256": "3417112cd5edd00ae51fc84cc45e31b1c5c39cb062aef6d4f64e23f3fec61c9d",
+      "bytes": 48770,
+      "rights": "未确认公开再分发许可，仅供有权使用的本机资源导入"
+    },
+    {
+      "kind": "icon",
+      "name": "new-chat",
+      "sha256": "6a0cd93a9269b9df360228f1a7c1fc04b2e7bf29b69b37131df85b4dca42d763",
+      "bytes": 1573,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "search",
+      "sha256": "c9ff5759943133e28b4ad7d8e2a93bf24cdd25b77fe8a15c52aeb199d49b8018",
+      "bytes": 1596,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "desktop",
+      "sha256": "5e3fae93f0c93d977af2ae708770fd029960d989f19c8471ac1b89bc84f6fc43",
+      "bytes": 1398,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "apps",
+      "sha256": "e39c67b5483bac3c74ebb0af8c823891c2b0c78c1afbc5716bfb1b93b60d5f86",
+      "bytes": 5075,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "assistant",
+      "sha256": "389eec3659c7f0234a3479f0e0a93c7e605fe95ad7760b1407928a83b68a8159",
+      "bytes": 2816,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "plug",
+      "sha256": "b9a6a041f00a8087a9652a8b05285e2d961813ab9258b1529bb7ef756929d1de",
+      "bytes": 2110,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "alarm",
+      "sha256": "deb85459502d8bd3a89b84288402ac766e0f6c9e87abec2cec1e54b5a7fadf0f",
+      "bytes": 1557,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "grid",
+      "sha256": "fe34f15d9a99ab73ac9fa5483a40fb723631234bba68bc48ed2ced2291a0e7e4",
+      "bytes": 3877,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "folder",
+      "sha256": "5725c7e046696c10a5b015ba70175a2991c0622d49f32fd49e4e0c5bec07e1f8",
+      "bytes": 1801,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "settings",
+      "sha256": "9dc86a91999f08e652e8e0df9325136e037c85c1ce28f5beed3564ce2e291a8f",
+      "bytes": 1924,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "panel",
+      "sha256": "b43e02fb97ae6188b95fcd4d501f5c289672cb6d89d98efb8627e53d89a222a8",
+      "bytes": 1341,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "panel-expand",
+      "sha256": "b43e02fb97ae6188b95fcd4d501f5c289672cb6d89d98efb8627e53d89a222a8",
+      "bytes": 1341,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "quick-ask",
+      "sha256": "67a33240bad7f198cde52be2ddc6137cd5b7f359d5b54593dfcca6d20069a620",
+      "bytes": 1725,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "mode-work",
+      "sha256": "6b3d0a79e4577ec66729784a0da12c444a5ed87a5ff4114d55e5d603590d92ba",
+      "bytes": 1681,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "mode-code",
+      "sha256": "b407ce0760cb4d07063100d9b3ad60149b5e443344ce6d7d046f1f08f04b6b2c",
+      "bytes": 1799,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "mode-design",
+      "sha256": "3973ffd91ef8878721e2703dbb2a44e412871fc6c1ccd0214a2e36b83e9dcfc2",
+      "bytes": 3081,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-document",
+      "sha256": "a5426018ac33647000d3584596192d4f4d41d1305132cca81af78c897dc5e25a",
+      "bytes": 2706,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-finance",
+      "sha256": "dc7e2c6a01068fbe5a221ca92c5f169e848bf144f510bac10eb4ecbaeb81518e",
+      "bytes": 2570,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-analytics",
+      "sha256": "06d0cfb30280dd23fde8a159ab10b638036ae9c7fb664a4c3d1fc14d4f4f9fc0",
+      "bytes": 1693,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-workspace",
+      "sha256": "47917be639ff425799788a27cdf7ce386a8d7d46038e68f4b17238d2021968ed",
+      "bytes": 658,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-slides",
+      "sha256": "3fca3c54ffb9797c41281a20b88f9e656dfa801e593eb62c7662bd7ff6ebd209",
+      "bytes": 2159,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-research",
+      "sha256": "91cb5137b2b6e0b7aaa4e2f8ec8863c5a3f5f37632840fa56a0d841a280dbebd",
+      "bytes": 1598,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-video",
+      "sha256": "c35faa9943fa42e67f710c2b4e0fa652fb99d1c6a8c372db89c610962b380252",
+      "bytes": 2491,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "scene-product",
+      "sha256": "9d7dd40f292c8dac732a0677338ac255651d519332dbee75286f2975048c8fc0",
+      "bytes": 2282,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "notification",
+      "sha256": "96602ff72c7dd81206e994dd022facb6114883ea64d2d88bd8e0e0324a4cfd26",
+      "bytes": 1998,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "mic",
+      "sha256": "4fb7f8488e616e55a9145fc2537e1d4cdc2aeec9625cbcbee750186d8e80ab41",
+      "bytes": 909,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "send",
+      "sha256": "dc423302a74c0ad6dfdd5e3748abb537a6994e4efe5e908b608a23a015ef775d",
+      "bytes": 984,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "stop",
+      "sha256": "4f36165404c7e538ce1d00777dc7f09b9d3a356869d3fdee70d480395970f24f",
+      "bytes": 397,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "code-daily",
+      "sha256": "92ea16a5fab51571ee09b9c5d9a54fc78b199c6dc2674987d7d5d8de86ee413d",
+      "bytes": 1366,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "code-website",
+      "sha256": "5169924c27b1ec3b455eadb6704e5cb6574152a9288d53bff9ab9776f321fe09",
+      "bytes": 1458,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "code-miniprogram",
+      "sha256": "5ec732ebb1774baf467d420fead022a6cf97f5e850d8128e6fc84cdd3d5569af",
+      "bytes": 3085,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "code-agent",
+      "sha256": "86499e4cf7b199cf14ab4caef14f759fd4e4a6ef67c86d18e1c852169d54178b",
+      "bytes": 3082,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "code-skill",
+      "sha256": "784ffa603c3faf29cfc97408085231bd1c4edfce6a2a0c60f3a9bc68a144c0ca",
+      "bytes": 1926,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "code-cicd",
+      "sha256": "82fce56ad5721abb99b003ab768259be6eeeb6f6c3c415ca77501daf3943ec97",
+      "bytes": 2282,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "code-documentation",
+      "sha256": "a5426018ac33647000d3584596192d4f4d41d1305132cca81af78c897dc5e25a",
+      "bytes": 2706,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-image",
+      "sha256": "47917be639ff425799788a27cdf7ce386a8d7d46038e68f4b17238d2021968ed",
+      "bytes": 658,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-video",
+      "sha256": "47917be639ff425799788a27cdf7ce386a8d7d46038e68f4b17238d2021968ed",
+      "bytes": 658,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-brand",
+      "sha256": "05ba9a9e0d2d67a19c7c1adaf34a6cee3702acad9bb0a3d39d5dc8db0320814b",
+      "bytes": 3507,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-poster",
+      "sha256": "77f2477bcc3adaf7403c8e556ff0a2b9ffbc153695b860f840da6d5dbcb212b8",
+      "bytes": 2360,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-operations",
+      "sha256": "6a6c6808ced883a678b90d2e709ba560f0b84adefb9a6ad5f5cf196fb4bd1fe9",
+      "bytes": 2133,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-ppt",
+      "sha256": "3fca3c54ffb9797c41281a20b88f9e656dfa801e593eb62c7662bd7ff6ebd209",
+      "bytes": 2159,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-website",
+      "sha256": "d5b5d77395aac1fefcc68f5374c24c1009f7ab7b4bbff507f5c7de2368eea669",
+      "bytes": 1461,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-mobile",
+      "sha256": "c34b703f0776443bc48da6a0c54dfd07d6fb3a3c9ff929e633f220b08c898ec7",
+      "bytes": 1712,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-system",
+      "sha256": "bb0a096d78021732e73293d22eb7e7aa443179540adbe489d9808143e1ced100",
+      "bytes": 1767,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-webapp",
+      "sha256": "5169924c27b1ec3b455eadb6704e5cb6574152a9288d53bff9ab9776f321fe09",
+      "bytes": 1458,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    },
+    {
+      "kind": "icon",
+      "name": "design-icons",
+      "sha256": "e4d259b3c0271b869ca431e4bd7f8472f74b5f88187726d8c5fb48fe87803804",
+      "bytes": 1080,
+      "rights": "本机导入参考图标，不包含公开再分发授权"
+    }
+  ]
+}

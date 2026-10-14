@@ -1,0 +1,38 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { createServer } from 'node:http';
+import { chromium } from 'playwright';
+import { createApp } from '../src/server.mjs';
+
+const quote = value => process.platform === 'win32' ? '"' + value.replaceAll('"', '\\"') + '"' : "'" + value.replaceAll("'", "'\\''") + "'";
+test('右工作面板真实HTTP/UI：聊天收窄、多标签、文件、浏览器表单、终端确认/流式/cancel/关闭', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'buddy-panel-ui-')); await mkdir(join(directory, 'workspace')); await writeFile(join(directory, 'workspace/actual.txt'), 'ACTUAL_WORKSPACE_CONTENT');
+  const app = await createApp({ dataDir: join(directory, 'data'), workspaceRoot: join(directory, 'workspace'), env: {}, secretStore: { type: 'memory', async get() { return ''; }, async set() {}, async delete() {} }, automationOptions: { pollIntervalMs: 0 } });
+  const url = await app.listen(0), workspace = app.store.workspaces()[0], session = app.store.createSession(workspace.id, 'AGENT', []);
+  const site = createServer((req, res) => { res.setHeader('Content-Type', 'text/html'); res.end('<title>Real Panel Site</title><input aria-label="Entry"><button onclick="document.getElementById(\'result\').textContent=document.querySelector(\'input\').value">Apply</button><p id="result">EMPTY</p>'); });
+  await new Promise(resolve => site.listen(0, '127.0.0.1', resolve)); const browser = await chromium.launch({ headless: true });
+  t.after(async () => { await browser.close(); await app.close(); await new Promise(resolve => site.close(resolve)); await rm(directory, { recursive: true, force: true }); });
+  const page = await browser.newPage({ viewport: { width: 1470, height: 853 } }), errors = []; page.on('pageerror', error => errors.push(error.message));
+  await page.goto(url); await page.locator(`[data-session="${session.id}"]`).first().click(); const initialWidth = await page.locator('.main').evaluate(element => element.getBoundingClientRect().width);
+  await page.locator('#task-details').click(); await page.locator('#side-panel').waitFor({ state: 'visible' });
+  const widths = await page.evaluate(() => ({ chat: document.querySelector('.main').getBoundingClientRect().width, panel: document.querySelector('#side-panel').getBoundingClientRect().width, tab: document.querySelector('.wb-panel-tab').getBoundingClientRect().width }));
+  assert.ok(widths.chat < initialWidth - 450); assert.ok(widths.panel > 530 && widths.panel < 570); assert.ok(widths.tab >= 238 && widths.tab <= 240);
+  await page.locator('[data-panel-kind="workspace"]').click(); await page.locator('[data-panel-file="actual.txt"]').click(); await page.locator('#preview-dialog').waitFor({ state: 'visible' }); assert.match(await page.locator('#preview-dialog').innerText(), /ACTUAL_WORKSPACE_CONTENT/);
+  await page.locator('#preview-dialog [data-close="preview-dialog"]').click(); await page.waitForFunction(() => !document.querySelector('#app').classList.contains('preview-open')); await page.locator('#task-details').click(); await page.locator('[data-panel-action="new"]').click(); await page.locator('[data-panel-kind="browser"]').click();
+  await page.locator('.wb-panel-url input').fill(`http://127.0.0.1:${site.address().port}`); await page.locator('.wb-panel-url [type="submit"]').click(); await page.locator('[data-panel-browser-image]').waitFor();
+  await page.locator('.wb-panel-elements summary').click(); const input = page.locator('.wb-panel-element').filter({ hasText: 'Entry' }); await input.locator('input').fill('ACTUAL_UI_FORM_VALUE'); const filled = page.waitForResponse(response => response.url().endsWith('/action') && response.request().postDataJSON()?.action === 'fill'); await input.locator('[data-panel-browser-action="fill"]').click(); await filled; await page.waitForFunction(() => !document.querySelector('.wb-panel-content')?.classList.contains('busy'));
+  await page.locator('.wb-panel-elements summary').click(); const applied = page.waitForResponse(response => response.url().endsWith('/action') && response.request().postDataJSON()?.action === 'click'); await page.locator('.wb-panel-element').filter({ hasText: 'Apply' }).locator('[data-panel-browser-action="click"]').click(); const frame = await (await applied).json(); assert.match(frame.snapshot.text, /ACTUAL_UI_FORM_VALUE/);
+  await page.locator('[data-panel-action="new"]').click(); await page.locator('[data-panel-kind="terminal"]').click();
+  const command = `${quote(process.execPath)} -e ${quote("process.stdout.write('UI_REAL_STREAM');setInterval(()=>{},1000)")}`;
+  await page.locator('#side-panel [data-panel-form="command"] [name="command"]').fill(command); await page.locator('#side-panel [data-panel-form="command"] [type="submit"]').click(); await page.locator('[data-confirm="yes"]').waitFor();
+  assert.equal(app.sidePanel.list().tabs.find(tab => tab.kind === 'terminal').terminal, null);
+  await page.locator('[data-confirm="yes"]').click(); await page.waitForFunction(() => document.querySelector('.wb-panel-terminal-output')?.textContent.includes('UI_REAL_STREAM')); assert.match(await page.locator('.wb-panel-run-state').innerText(), /正在运行/);
+  await page.locator('#side-panel [data-panel-form="command"] [name="command"]').fill('NEXT_UNSENT_DRAFT'); await page.waitForTimeout(450); assert.equal(await page.locator('#side-panel [data-panel-form="command"] [name="command"]').inputValue(), 'NEXT_UNSENT_DRAFT');
+  await page.locator('[data-panel-action="cancel"]').click(); await page.waitForFunction(() => document.querySelector('.wb-panel-run-state')?.textContent.includes('cancelled'));
+  assert.equal(app.store.sessions().length, 1); assert.ok(await page.locator('.wb-panel-tab').count() >= 3); assert.deepEqual(errors, []);
+  await page.locator('[data-panel-action="collapse"]').click(); assert.ok(await page.locator('.main').evaluate(element => element.getBoundingClientRect().width) > widths.chat + 450);
+  for (const tab of app.sidePanel.list().tabs) await app.sidePanel.remove(tab.id); assert.deepEqual(app.sidePanel.list().tabs, []);
+});

@@ -1,0 +1,167 @@
+{
+  "qrcode": {
+    "version": "1.5.4",
+    "source": "https://registry.npmjs.org/qrcode/-/qrcode-1.5.4.tgz",
+    "tarSha256": "0c7274f0c299f39c2fddf54a2e0039b785977b0173c02d0b3f65fad68923e2b0"
+  },
+  "dijkstrajs": {
+    "version": "1.0.3",
+    "source": "https://registry.npmjs.org/dijkstrajs/-/dijkstrajs-1.0.3.tgz",
+    "tarSha256": "07149886ab98299c227b8de61912770b24b8a17b250996a4b5727c9f8bff4c00"
+  },
+  "selection": "QR core + SVG renderer + dependency; one documented require-path patch for Electron packaging",
+  "files": [
+    {
+      "path": "lib/core/alignment-pattern.js",
+      "sha256": "7e642a801c5c3d114bcceeeb08a3930369ec16fe874bdb617f02efb43aaea9ba",
+      "bytes": 2996
+    },
+    {
+      "path": "lib/core/alphanumeric-data.js",
+      "sha256": "cf8f81197e02c0db069155a2e82c098d26329019cfd06cc0e4479124636fa1ea",
+      "bytes": 1822
+    },
+    {
+      "path": "lib/core/bit-buffer.js",
+      "sha256": "c6f982814aa373da6e44183a61f75762c8559909087fff76603885b180bac0ad",
+      "bytes": 719
+    },
+    {
+      "path": "lib/core/bit-matrix.js",
+      "sha256": "77e051929fbc9d3b3ba91bd9b190f9a1ab3ccea162d627696ad2c01bf41e51bd",
+      "bytes": 1501
+    },
+    {
+      "path": "lib/core/byte-data.js",
+      "sha256": "24614cb942165dcc5378117a951cc1d68fbfc2e60043830111ae99283cd9aa94",
+      "bytes": 675
+    },
+    {
+      "path": "lib/core/error-correction-code.js",
+      "sha256": "03683cae6cc410b83f8ad0e87fa394df5102b52ca4ce843e507aa9f6acce13e5",
+      "bytes": 3415
+    },
+    {
+      "path": "lib/core/error-correction-level.js",
+      "sha256": "7f31b2250223cb7549bf3c305cce948ad9b0ee67cb9ee93b6c08352b7fa2b7f6",
+      "bytes": 893
+    },
+    {
+      "path": "lib/core/finder-pattern.js",
+      "sha256": "e5808e9b8ed06fd7c3ed201a03f7e7341a5c80f6a8b4cc78c9a94c3ee0ddd6e2",
+      "bytes": 599
+    },
+    {
+      "path": "lib/core/format-info.js",
+      "sha256": "889b133cd6a86f4079a3a5d1dfd94c495ca71d4fde4ec88ce9e9a5de358629d0",
+      "bytes": 1126
+    },
+    {
+      "path": "lib/core/galois-field.js",
+      "sha256": "d487207ce5040b49f95441bedafb6dbc9c010b245a0f0f47b9e3f10f8d9530a6",
+      "bytes": 1899
+    },
+    {
+      "path": "lib/core/kanji-data.js",
+      "sha256": "2dcd7d5aee492392e0c47976ae718e9783c5b13234487804ed21558fbd4a62de",
+      "bytes": 1584
+    },
+    {
+      "path": "lib/core/mask-pattern.js",
+      "sha256": "c8cfdab7b8d8276f9c1128ab8e5d930759df7594f03211f72b80c3002af91aa9",
+      "bytes": 6101
+    },
+    {
+      "path": "lib/core/mode.js",
+      "sha256": "25d3574cf4b0cdbd62363ff2c57eb46da41d21124e6d37eb0e84f979799bd530",
+      "bytes": 3983
+    },
+    {
+      "path": "lib/core/numeric-data.js",
+      "sha256": "3e506376e4c84b88162024c1d840b5bc3721da3b0d02f18784161adea5e3b2e8",
+      "bytes": 1211
+    },
+    {
+      "path": "lib/core/polynomial.js",
+      "sha256": "34cb4e4216fc51fe75ac1c4bb00c4f4fc118a51da50c8250aec951062ff3a3c4",
+      "bytes": 1589
+    },
+    {
+      "path": "lib/core/qrcode.js",
+      "sha256": "216e490908ed95df74992a05d44efa35ea7bc8dcab27b49b446725964704e833",
+      "bytes": 15128
+    },
+    {
+      "path": "lib/core/reed-solomon-encoder.js",
+      "sha256": "080273fcf5a73c2348330f3edb55f3968c78853e298dc55a074becd7cee3faa2",
+      "bytes": 1625
+    },
+    {
+      "path": "lib/core/regex.js",
+      "sha256": "974d9358148d11c8e48713ef2da8fc12e597b76f4e6fc6bde00cfe7c8094efa1",
+      "bytes": 1084
+    },
+    {
+      "path": "lib/core/segments.js",
+      "sha256": "77876baee2d1390ff8a53edc8da4e9068b8d41caadb30b6c11932717be0efaec",
+      "bytes": 9356
+    },
+    {
+      "path": "lib/core/utils.js",
+      "sha256": "1b66145cb9afddadf46ea7314b168e0b8369b2ab4938256fe64bd1c465a473bd",
+      "bytes": 1621
+    },
+    {
+      "path": "lib/core/version-check.js",
+      "sha256": "9cffe3a6f9cbb978022c0d0b1652fb2f3d381b9e48b7e01dfc744ded28736da2",
+      "bytes": 268
+    },
+    {
+      "path": "lib/core/version.js",
+      "sha256": "1221665a29e6927d3823912bde8bd711c114c61188d7ce862997a33d47fcfba9",
+      "bytes": 4928
+    },
+    {
+      "path": "lib/renderer/svg-tag.js",
+      "sha256": "2f733e88d0b0155fae4aa4827de0fb9ae73cbbfdfc0cae52dc9d5ed17ae0447d",
+      "bytes": 1971
+    },
+    {
+      "path": "lib/renderer/utils.js",
+      "sha256": "03ffb1b5f7e629bef61a83835107b391efc0b7a71ab9329a950708b20f361b87",
+      "bytes": 2894
+    },
+    {
+      "path": "license",
+      "sha256": "8df47c6ad9ac2c41eb9b2a72def9908959da0ede8dadd56c7b249c1bdb0c5ce6",
+      "bytes": 1076
+    },
+    {
+      "path": "vendor/dijkstrajs/LICENSE.md",
+      "sha256": "c46324e45a005413535a6fb7a97e9eacd3cc6bf30335b7d5c10b8ee3af9e60c2",
+      "bytes": 714
+    },
+    {
+      "path": "vendor/dijkstrajs/dijkstra.js",
+      "sha256": "7f5721e77332370a71314f1536b8c552f4f9dbd99bbc6c5aa10df3253eacfd5c",
+      "bytes": 5206
+    },
+    {
+      "path": "vendor/dijkstrajs/package.json",
+      "sha256": "b523e007019401be68405b83e846ef9da4682026e8be339ee4ee7888e90b865a",
+      "bytes": 1268
+    },
+    {
+      "path": "package.json",
+      "sha256": "cbe26d7282c802f4ab9c1f790c5d8450d2b5c82e8bb5f67e3a5c2641ea347d1d",
+      "bytes": 1766
+    }
+  ],
+  "patches": [
+    {
+      "file": "lib/core/segments.js",
+      "reason": "Electron packaging omits nested node_modules; use a normal vendor directory instead",
+      "originalSha256": "abd08a6ddd778c92e36e2a303d2b4a3b4ad1d9089d2a7605bee8b9d06da7846a"
+    }
+  ]
+}
