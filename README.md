@@ -60,7 +60,7 @@ npm run desktop:build -- --target=win-x64
 
 输出位于 `output/desktop/`，不进入 Git。默认不会把本机原版参考素材打入分发包。正式公开分发前仍需要核对签名、平台实机运行和全部第三方许可；本仓库不附带私有本机安装包。
 
-Mac ARM 的本地研究构建经过实际运行验证；Windows / Intel 配置存在，但**不能把跨平台构建成功视为完整实机验收**。GitHub Actions 提供测试和手动 Windows 构建流程。
+Mac ARM 的本地研究构建经过原生运行验证，Intel x64 构建经 Apple Silicon 上的 Rosetta 运行验证；尚无本轮 Intel 实机或 Windows 实机验收结论。**不能把跨平台构建成功视为完整实机验收**。GitHub Actions 提供测试和手动 Windows 构建流程。
 
 ## 权限与数据
 
